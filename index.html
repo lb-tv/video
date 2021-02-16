@@ -161,7 +161,7 @@
 			.then(json => {
 				let currentDomain = json.domain;
 				const links = document.querySelector('#links');
-				links = `<a href="${ currentDomain }" class="show_btn btn_a">Перейти на сайт</a> <br /><a href="https://t.me/joinchat/T2rGMxzFcZ8BqOoA" class="show_btn btn_a tlgr_btn">Перейти в телеграм канал</a>`;
+				links.innerHTML = `<a href="${ currentDomain }" class="show_btn btn_a">Перейти на сайт</a> <br /><a href="https://t.me/joinchat/T2rGMxzFcZ8BqOoA" class="show_btn btn_a tlgr_btn">Перейти в телеграм канал</a>`;
 			})
 	</script>
 	<a href="https://t.me/joinchat/T2rGMxzFcZ8BqOoA">
