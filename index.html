@@ -48,9 +48,8 @@
 
 					<section class="time_section">
 						<h1 class="align_center">Актуальные ссылки</h1>
-						<div class="live align_center">
-							<a href="http://z18.liveball8.ml" class="show_btn btn_a">Перейти на сайт</a> <br />
-							<a href="https://t.me/joinchat/T2rGMxzFcZ8BqOoA" class="show_btn btn_a tlgr_btn">Перейти в телеграм канал</a>
+						<div class="live align_center" id="links">
+							
 						</div>
 					</section>
 				</div>
@@ -156,6 +155,14 @@
 				}
 			})
 		}
+		
+		fetch('https://api.kotak.ga/currentDomain')
+			.then(response => response.json())
+			.then(json => {
+				let currentDomain = json.domain;
+				const links = document.querySelector('#links');
+				links = `<a href="${ currentDomain }" class="show_btn btn_a">Перейти на сайт</a> <br /><a href="https://t.me/joinchat/T2rGMxzFcZ8BqOoA" class="show_btn btn_a tlgr_btn">Перейти в телеграм канал</a>`;
+			})
 	</script>
 	<a href="https://t.me/joinchat/T2rGMxzFcZ8BqOoA">
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="tg_img"
