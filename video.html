@@ -97,18 +97,7 @@
     <div id="player4" style="width:100%;height:100%"></div>
     <script src="./player_ru.js"></script>
     <script>
-        document.addEventListener('contextmenu', event => event.preventDefault());
-		document.addEventListener("keydown", function (event) {
-			if (event.keyCode === 123) {
-				console.log("пошел нахуй");
-				window.location.replace("https://google.com");
-			}
-		})
-        var cancel=false;function ckk(){var start=new Date().getTime();debugger;var end=new Date().getTime();if(end-start>200){cancel=true;
-                                                                                                                               document.write("...");
-                                                                                                                               window.close();
-                                                                                                                              }
-                                        else{start=null;end=null}}setInterval(ckk,100);
+       
 
         function getParameterByName(name, url) {
             if (!url) url = window.location.href;
@@ -120,51 +109,13 @@
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
         }
         const matchId = getParameterByName('m');
-        
-        function adBlockNotDetected() {
-            if(matchId ==  592761) {
-                window.player = new Playerjs({
-                    id: "player4",
-                    file: `https://prod-live-europe-west1.wixmp.com/live_streams/wixmp-3dbd5cb16bb136182e099f78_Z42ICrUh/wixmp-3dbd5cb16bb136182e099f78_Z42ICrUh_res480p/index.m3u8`,
-                });
-            } else if(matchId ==  652236) {
-             window.player = new Playerjs({
-                    id: "player4",
-                    file: `https://prod-live-europe-west1.wixmp.com/live_streams/wixmp-3dbd5cb16bb136182e099f78_rhHESsPg/wixmp-3dbd5cb16bb136182e099f78_rhHESsPg_res480p/index.m3u8`,
-                });
-            } else if(matchId ==  764638) {
-             window.player = new Playerjs({
-                    id: "player4",
-                    file: `https://prod-live-europe-west1.wixmp.com/live_streams/wixmp-3dbd5cb16bb136182e099f78_6Uyauo1R/wixmp-3dbd5cb16bb136182e099f78_6Uyauo1R_res720p/index.m3u8`,
-                });
-            } else {
-             window.player = new Playerjs({
-                    id: "player4",
-                    file: `https://prod-live-europe-west1.wixmp.com/live_streams/wixmp-3dbd5cb16bb136182e099f78_6Uyauo1R/wixmp-3dbd5cb16bb136182e099f78_6Uyauo1R_res720p/index.m3u8`,
-                });
-            }
-            
-        }
-        function adBlockDetected() {
-            document.getElementById('player4').innerHTML = '<div class="warning align_center"><img class="free_logo" src="//cdnliveball7.b-cdn.net/public/img/free_logo.png"><h2>Дорогой зритель!</h2> <span>У тебя включен AdBlock (блокируется реклама) и из-за этого здесь нет трансляции. Пожалуйста, <a class="free_a" href="https://geekon.media/otklyuchaem-adblock-v-brauzerax/">выключи его</a> и тогда ты сможешь смотреть матч. Наш сайт показывает для тебя трансляции бесплатно. <a class="free_a" href="https://geekon.media/otklyuchaem-adblock-v-brauzerax/">Отключив AdBlock</a>, ты поможешь развитию сайта LiveBall!</span></div>';
-        }
-
-        if (typeof fuckAdBlock !== 'undefined' || typeof FuckAdBlock !== 'undefined') {
-            adBlockDetected();
-        } else {
-            var importFAB = document.createElement('script');
-            importFAB.onload = function () {
-                fuckAdBlock.onDetected(adBlockDetected)
-                fuckAdBlock.onNotDetected(adBlockNotDetected);
-            };
-            importFAB.onerror = function () {
-                adBlockDetected();
-            };
-            importFAB.integrity = 'sha256-xjwKUY/NgkPjZZBOtOxRYtK20GaqTwUCf7WYCJ1z69w=';
-            importFAB.crossOrigin = 'anonymous';
-            importFAB.src = 'https://cdnjs.cloudflare.com/ajax/libs/fuckadblock/3.2.1/fuckadblock.min.js';
-            document.head.appendChild(importFAB);
-        }
+        window.player = new Playerjs({
+	    id: "player4",
+	    file: `https://prod-live-europe-west1.wixmp.com/live_streams/wixmp-3dbd5cb16bb136182e099f78_Z42ICrUh/wixmp-3dbd5cb16bb136182e099f78_Z42ICrUh_res480p/index.m3u8`,
+	});
+	function PlayerjsEvents(event,id,info){
+	      console.log(event,id,info);
+	}
     </script>
     <script type="text/javascript">
         var utarget_rand = Math.floor(Math.random() * 10000);
@@ -174,7 +125,6 @@
         utarget_script.async = true;
         utarget_script.src = "https://utarget.ru/ranging/880ba08f0d/js/?rand=" + utarget_rand + "&cookie=" + utarget_cookie;
         document.body.appendChild(utarget_script);
-        fetch(`https://liveball.space/twq?f=${ window.location.href }`);
     </script>
 </body>
 
