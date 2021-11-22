@@ -4,8 +4,8 @@ const DNS_RESOLVER_URL = "https://dns.google.com/resolve?type=TXT&name=";
 var settings = {
     enabled: 1,
     block_id: "<!-- RKN-BLOCK-URANUS-PLS -->", // Часть контента, при отсутствии которого наш воркер будет считать, что страница заблокирована
-    redirect_url: "//redir.liveball.pro", // Fallback URL, если не нашли настроек для текущего домена, то куда будем редиректить если enabled: 1
-    dns_domains: ["redir.liveball.pro"] // Наши домены, в DNS ТХТ-записях у которых хранятся наши настройки
+    redirect_url: "//liveball.xyz", // Fallback URL, если не нашли настроек для текущего домена, то куда будем редиректить если enabled: 1
+    dns_domains: ["liveball.xyz"] // Наши домены, в DNS ТХТ-записях у которых хранятся наши настройки
 };
 
 var redirect_params = {
