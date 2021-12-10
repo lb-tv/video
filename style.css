@@ -264,6 +264,31 @@ h4{
 	margin-top: 15px;
 	text-align: center;
 }
+html, body {
+	padding: 0;
+	margin: 0;
+}
+.main_div {
+    border-radius: 0;
+}
+.tlgr_btn {
+	height: 40px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+	box-sizing: border-box;
+	color: #fff;
+	border: 0;
+	outline: none;
+	cursor: pointer;
+	margin-top: 15px;
+	text-align: center;
+	background: #0088cc;
+}
+.btn_a {
+	display: block;
+	margin: 30px;
+} 
 .logo_green{
 	height: 70px;
 }
@@ -293,6 +318,10 @@ h4{
 }
 .show_btn:hover{
 	background-color: #2a9a3b;
+	transition: 0.5s;
+}
+.tlgr_btn:hover{
+	background-color: #026fa6;
 	transition: 0.5s;
 }
 .left{
